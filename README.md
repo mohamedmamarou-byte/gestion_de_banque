@@ -15,7 +15,8 @@ Application console de gestion de comptes bancaires, écrite en C++ pour apprend
 
 ## Compilation et exécution
 ```
-g++ -std=C++23 
+g++ -std=c++23 -Wall -Wextra -I include src/*.cpp -o banque
+./banque 
 ```
 ## Feuille de route
 - [x] v1.0 : squelette du projet
