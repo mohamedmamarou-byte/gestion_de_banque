@@ -12,14 +12,10 @@ Application console de gestion de comptes bancaires, écrite en C++ pour apprend
 ## Structure du projet
 - `include/` : fichiers d'en-tête (`compte.h`, `menu.h`)
 - `src/` : implémentations (`compte.cpp`, `menu.cpp`, `main.cpp`)
-- `CMakeLists.txt` : configuration de la compilation
 
 ## Compilation et exécution
 ```
-cmake -S . -B build
-cmake --build build
-./build/gestion_de_banque
-```
+g++ -std=C++23 
 
 ## Feuille de route
 - [x] v1.0 : squelette du projet
