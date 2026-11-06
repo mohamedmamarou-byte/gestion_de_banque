@@ -1,12 +1,18 @@
 #include "compte.hpp"
 #include <iostream>
 
+
+Compte::Compte (){
+    num_compte = 0;
+    nom {};
+    solde {0};
+}
 Compte::Compte(int numero, std::string nom, double solde_compte){
 
 }
 
 Compte::~Compte(){
-    
+
 }
 
 void Compte::setTitulaire(std::string  nom){
