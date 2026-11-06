@@ -21,7 +21,7 @@ g++ -std=c++23 -Wall -Wextra -I include src/*.cpp -o banque
 ## Feuille de route
 - [x] v1.0 : squelette du projet
 - [x] v1.1 : authentification
-- [ ] v1.2 : menus administrateur et consultation
+- [x] v1.2 : menus administrateur et consultation
 - [ ] v1.3 : opérations sur les comptes
 
 ## Auteur
