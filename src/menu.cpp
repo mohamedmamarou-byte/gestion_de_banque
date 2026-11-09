@@ -14,7 +14,7 @@ void menuPrincipal(){
 }
 void menuAdministrateur(){
     std::cout <<std::endl <<std::endl <<"\t\t\t\t\t=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+==+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << std::endl; 
-    std::cout <<"\t\t\t\t\t||                  ----------  Menu Administrateure  -----------              ||" << std::endl; 
+    std::cout <<"\t\t\t\t\t||                  ----------  Menu Administrateure  -----------           ||" << std::endl; 
     std::cout << "\t\t\t\t\t=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+==+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << std::endl;  
     std::cout <<"\t\t\t\t\t||             1. Creer un nouveau compte                                    ||" << std::endl; 
     std::cout <<"\t\t\t\t\t||             2. Lister tous les comptes actifs                             ||" << std::endl; 

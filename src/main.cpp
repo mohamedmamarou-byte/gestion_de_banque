@@ -1,8 +1,11 @@
-#include <iostream>
 #include "menu.hpp"
+#include "fonction.hpp"
+#include <iostream>
+#include <vector>
 #include <cstdlib>
 #include <string>
-
+int id = 00000;
+std::vector<Compte> banque;
 
 int main(){
     std::system("clear");
@@ -11,7 +14,7 @@ int main(){
     std::cout <<"\t\t\t\t||                     Bienvenue ! Dans le projet de gestion d'une banque                   ||" << std::endl; 
     std::cout <<"\t\t\t\t=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+==+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+" << std::endl; 
     do {
-        std::string saisie{};
+        std::string saisie1{} , saisie{};
         menu:
         menuPrincipal();
         std::cout << "\t\t\t\t\tVotre choix : ";
@@ -40,27 +43,27 @@ int main(){
             do {
                 menuAdministrateur();
                 std::cout << "\t\t\t\t\tVotre choix : ";
-                std::getline(std::cin, saisie);
-                if (saisie == "1") {
+                std::getline(std::cin, saisie1);
+                if (saisie1 == "1") {
+                    ajouteCompte(id, banque);
+                } else if (saisie1 == "2") {
+                    afficherComptes(banque);
+                }else if (saisie1 == "3") {
                 
-                } else if (saisie == "2") {
+                }else if (saisie1 == "4") {
                 
-                }else if (saisie == "3") {
+                }else if (saisie1 == "5") {
                 
-                }else if (saisie == "4") {
+                }else if (saisie1 == "6") {
                 
-                }else if (saisie == "5") {
-                
-                }else if (saisie == "6") {
-                
-                }else if (saisie == "7") {
+                }else if (saisie1 == "7") {
                     std::cout << "\t\t\t\t Bye Bye " << std::endl;
                 } else {
                     std::cout << "\t\t\t\t Choix invalide reesaiyer !!! " << std::endl;
 
                 }
                 
-            }while ( saisie != "7");
+            }while ( saisie1 != "7");
 
         } else if (saisieprinc == "2") {
             int tantative {1};

@@ -2,12 +2,10 @@
 #include <iostream>
 
 
-Compte::Compte (){
-    num_compte = 0;
-    nom {};
-    solde {0};
+Compte::Compte() : num_compte {0} ,titulaire {} , solde {0.0} {
+    
 }
-Compte::Compte(int numero, std::string nom, double solde_compte){
+Compte::Compte(int numero, std::string nom, double solde_compte) : num_compte {numero }, titulaire {nom}, solde {solde_compte} {
 
 }
 
@@ -31,4 +29,13 @@ void Compte::deposer(double montant){
 
 void Compte::retirer(double montant){
 
+}
+int Compte::getNum_Compte() const {
+    return num_compte;
+}
+std::string Compte::getTitulaire() const{
+    return titulaire;
+}
+double Compte::getSolde() const{
+    return solde;
 }

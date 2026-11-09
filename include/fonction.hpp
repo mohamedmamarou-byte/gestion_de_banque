@@ -1,3 +1,6 @@
 #pragma once
+#include <vector>
+#include "compte.hpp"
 
-void ajouteCompte();
+void ajouteCompte(int& id,std::vector<Compte>& principal);
+void afficherComptes(const std::vector<Compte>& principal);
