@@ -4,7 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <string>
-int id = 00000;
+int id = {};
 std::vector<Compte> banque;
 
 int main(){
@@ -49,7 +49,7 @@ int main(){
                 } else if (saisie1 == "2") {
                     afficherComptes(banque);
                 }else if (saisie1 == "3") {
-                
+                    rechercherCompte(banque, id);
                 }else if (saisie1 == "4") {
                 
                 }else if (saisie1 == "5") {
@@ -91,9 +91,9 @@ int main(){
                 std::cout << "\t\t\t\t\tVotre choix : ";
                 std::getline(std::cin, saisie);
                 if (saisie == "1") {
-                
+                    afficherComptes(banque);
                 } else if (saisie == "2") {
-                
+                    rechercherCompte(banque, id);
                 }else if (saisie == "3") {
                     std::cout << "\t\t\t\t Bye Bye " << std::endl;
                 } else {
