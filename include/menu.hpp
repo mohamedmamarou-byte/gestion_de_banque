@@ -3,3 +3,4 @@
 void menuPrincipal();
 void menuAdministrateur();
 void menuConsultation();
+void affichagefin();

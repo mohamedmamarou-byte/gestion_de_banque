@@ -14,13 +14,13 @@ public:
     Compte(int numero, std::string nom, double solde_compte);
     ~Compte();
 
-    int getNum_Compte();
-    std::string getTitulaire();
-    double getSolde();
+    int getNum_Compte() const;
+    std::string getTitulaire() const;
+    double getSolde() const;
 
     void setTitulaire(std::string  nom);
     void setSolde(double nouveau_solde);
-    void compte_a_compte(Compte deposant);
+    void compte_a_compte(Compte& deposant, double montant );
     void deposer(double valeur);
     void retirer(double montant);
     
