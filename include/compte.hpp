@@ -20,7 +20,7 @@ public:
 
     void setTitulaire(std::string  nom);
     void setSolde(double nouveau_solde);
-    void compte_a_compte(Compte deposant);
+    void compte_a_compte(Compte& deposant, double montant );
     void deposer(double valeur);
     void retirer(double montant);
     

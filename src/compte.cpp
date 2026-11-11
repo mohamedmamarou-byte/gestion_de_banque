@@ -19,16 +19,17 @@ void Compte::setTitulaire(std::string  nom){
 void Compte::setSolde(double nouveau_solde){
 
 }
-void Compte::compte_a_compte(Compte deposant){
-
+void Compte::compte_a_compte(Compte& deposant, double montant){
+    solde += montant;
+    deposant.retirer(montant);
 }
 
 void Compte::deposer(double montant){
-
+    solde += montant;
 }
 
 void Compte::retirer(double montant){
-
+    solde -= montant;
 }
 int Compte::getNum_Compte() const {
     return num_compte;

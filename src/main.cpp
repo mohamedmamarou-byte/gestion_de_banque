@@ -51,11 +51,11 @@ int main(){
                 }else if (saisie1 == "3") {
                     rechercherCompte(banque, id);
                 }else if (saisie1 == "4") {
-                
+                    deposerArgent(banque , id);
                 }else if (saisie1 == "5") {
-                
+                    retierArgent(banque, id);
                 }else if (saisie1 == "6") {
-                
+                    compte_a_compte(banque, id);
                 }else if (saisie1 == "7") {
                     std::cout << "\t\t\t\t Bye Bye " << std::endl;
                 } else {
