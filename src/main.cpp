@@ -5,9 +5,11 @@
 #include <cstdlib>
 #include <string>
 int id = {};
-std::vector<Compte> banque;
+std::vector<Compte> banque ;
+
 
 int main(){
+    Compte  objetBanque;
     std::system("clear");
     std::string saisieprinc{};
     std::cout <<"\t\t\t\t=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+==+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+" << std::endl; 
@@ -45,17 +47,17 @@ int main(){
                 std::cout << "\t\t\t\t\tVotre choix : ";
                 std::getline(std::cin, saisie1);
                 if (saisie1 == "1") {
-                    ajouteCompte(id, banque);
+                    objetBanque.ajouteCompte(id, banque);
                 } else if (saisie1 == "2") {
-                    afficherComptes(banque);
+                    objetBanque.afficherComptes(banque);
                 }else if (saisie1 == "3") {
-                    rechercherCompte(banque, id);
+                    objetBanque.rechercherCompte(banque, id);
                 }else if (saisie1 == "4") {
-                    deposerArgent(banque , id);
+                    objetBanque.deposerArgent(banque , id);
                 }else if (saisie1 == "5") {
-                    retierArgent(banque, id);
+                    objetBanque.retierArgent(banque, id);
                 }else if (saisie1 == "6") {
-                    compte_a_compte(banque, id);
+                    objetBanque.compte_a_compte(banque, id);
                 }else if (saisie1 == "7") {
                     std::cout << "\t\t\t\t Bye Bye " << std::endl;
                 } else {
@@ -91,9 +93,9 @@ int main(){
                 std::cout << "\t\t\t\t\tVotre choix : ";
                 std::getline(std::cin, saisie);
                 if (saisie == "1") {
-                    afficherComptes(banque);
+                    objetBanque.afficherComptes(banque);
                 } else if (saisie == "2") {
-                    rechercherCompte(banque, id);
+                    objetBanque.rechercherCompte(banque, id);
                 }else if (saisie == "3") {
                     std::cout << "\t\t\t\t Bye Bye " << std::endl;
                 } else {

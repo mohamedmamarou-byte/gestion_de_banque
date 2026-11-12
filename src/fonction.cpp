@@ -1,11 +1,13 @@
 #include "fonction.hpp"
+#include "compte.hpp"
 #include <iostream>
+
 #include <ostream>
 #include <print>
 #include <vector>
 #include <string>
 
-void ajouteCompte(int& id, std::vector<Compte>& principal) {
+void Compte::ajouteCompte(int& id, std::vector<Compte>& principal) {
     id++;
     std::string nom {};
     double solde {};
@@ -21,7 +23,11 @@ void ajouteCompte(int& id, std::vector<Compte>& principal) {
     std::cout << "\t\t\t\t\t\t\t\t ************ Ajouter avec succes **************" << std::endl;
 }
 
-void afficherComptes(const std::vector<Compte>& principal){
+void Compte::afficherComptes(const std::vector<Compte>& principal){
+    if (principal.size() == 0) {
+        std::cout << "\t\t\t\t\t\t ************ Aucun Compte enregistre  **************" << std::endl;
+        return;
+    }
     std::cout << std::endl << "\t\t\t\t\t\t *********** Affichage des comptes **************" << std::endl;
     std::println("\t\t\t\t=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+==+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=");
     std::println("\t\t\t\t||   Numero Compte  |               Titulaire             |         Solde             ||");
@@ -33,9 +39,9 @@ void afficherComptes(const std::vector<Compte>& principal){
 
 }
 
-void rechercherCompte(const std::vector<Compte>& principal, const int& identifiant ){
+void Compte::rechercherCompte(const std::vector<Compte>& principal, const int& identifiant ){
     if (principal.size() == 0) {
-        std::cout << "\t\t\t\t\t\t\t\t ************Aucun Compte enregistre  **************" << std::endl;
+        std::cout << "\t\t\t\t\t ************ Aucun Compte enregistre  **************" << std::endl;
         return;
     }
     std::string choix{}, nom {};
@@ -99,12 +105,12 @@ void rechercherCompte(const std::vector<Compte>& principal, const int& identifia
 
 }
 
-void deposerArgent(std::vector<Compte>& principal , const int& identifiant){
+void Compte::deposerArgent(std::vector<Compte>& principal , const int& identifiant){
     int id {};
     double solde{};
     std::cout << std::endl << "\t\t\t\t\t\t *********** faire un Depot  **************" << std::endl;
     if (principal.size() == 0) {
-        std::cout << "\t\t\t\t\t\t\t\t ************Aucun Compte enregistre  **************" << std::endl;
+        std::cout << "\t\t\t\t\t ************ Aucun Compte enregistre  **************" << std::endl;
         return;
     }
     std::cout << "\t\t\t\t\t\t\t\t  Entrez votre Numero du compte : ";
@@ -119,12 +125,12 @@ void deposerArgent(std::vector<Compte>& principal , const int& identifiant){
 
 }
 
-void retierArgent(std::vector<Compte>& principal , const int& identifiant ){
+void Compte::retierArgent(std::vector<Compte>& principal , const int& identifiant ){
     int id {};
     double solde{};
     std::cout << std::endl << "\t\t\t\t\t\t *********** faire un Retrait  **************" << std::endl;
     if (principal.size() == 0) {
-        std::cout << "\t\t\t\t\t\t\t\t ************ Aucun Compte enregistre  **************" << std::endl;
+        std::cout << "\t\t\t\t\t ************ Aucun Compte enregistre  **************" << std::endl;
         return;
     }
     std::cout << "\t\t\t\t\t\t\t\t  Entrez votre Numero du compte : ";
@@ -138,12 +144,12 @@ void retierArgent(std::vector<Compte>& principal , const int& identifiant ){
     std::println("\t\t\t\t\t\t\t\t******* le Solde du compte aprés retrait est  : {:^10} ******** ", principal[id-1].getSolde());
 
 }
-void compte_a_compte(std::vector<Compte>& compte , const int& identifiant){
+void Compte::compte_a_compte(std::vector<Compte>& compte , const int& identifiant){
     int id_d {}, id_R {};
     double solde {};
     std::cout << std::endl << "\t\t\t\t\t\t *********** faire un compte à compte  **************" << std::endl;
     if (compte.size() == 0) {
-        std::cout << "\t\t\t\t\t\t\t\t ************ Aucun Compte enregistre  **************" << std::endl;
+        std::cout << "\t\t\t\t\t ************ Aucun Compte enregistre  **************" << std::endl;
         return;
     }
     std::cout << "\t\t\t\t\t\t\t\t  Entrez le numero du compte deposant : ";
@@ -154,6 +160,10 @@ void compte_a_compte(std::vector<Compte>& compte , const int& identifiant){
     std::cout << "\t\t\t\t\t\t\t\t  Entrez le numero du compte receveur : ";
     std::cin >> id_R;
     verification_id(id_R, identifiant);
+    if (id_d == id_R){
+        std::cout << "\t\t\t\t\t\t\t ************ Erreur deposant est le receveur veillez reessailler !  **************" << std::endl;
+        return;
+    }
     std::println("\t\t\t\t\t\t\t\t le Nom du recepteur est  : {:^20}|", compte[id_R -1].getTitulaire());
     std::cout << "\t\t\t\t\t\t\t\t Entrez le Montant du versement : ";
     std::cin >> solde;
